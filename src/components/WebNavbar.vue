@@ -2,8 +2,8 @@
   <div id="side-navbar" class="w-64 h-screen bg-blue-500">
     <button class="w-full flex items-center justify-between hover:bg-blue-600">
       <div class="px-4 py-2 text-left">
-        <div class="text-white font-semibold text-xl">Our Budget</div>
-        <div class="text-gray-300 text-xs">email@gmail.com</div>
+        <div class="text-white font-semibold text-xl select-none">Our Budget</div>
+        <div class="text-gray-300 text-xs select-none">email@gmail.com</div>
       </div>
       <svg
         id="icon-cheveron-down"
@@ -35,10 +35,10 @@
         />
         <path class="secondary" d="M12 11.38l-10-5V6c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v.38l-10 5z" />
       </svg>
-      <div class="ml-4 py-2 font-semibold text-white">Budget</div>
+      <div class="ml-4 py-2 font-semibold text-white select-none">Budget</div>
     </router-link>
     <router-link
-      to="/about"
+      to="/reports"
       class="px-4 w-full bg-blue-500 inline-flex items-center hover:bg-blue-600"
       exact-active-class="bg-blue-800"
     >
@@ -49,7 +49,7 @@
       >
         <path d="M1 10h3v10H1V10zM6 0h3v20H6V0zm5 8h3v12h-3V8zm5-4h3v16h-3V4z" />
       </svg>
-      <div class="ml-4 py-2 font-semibold text-white">Reports</div>
+      <div class="ml-4 py-2 font-semibold text-white select-none">Reports</div>
     </router-link>
 
     <router-link
@@ -68,8 +68,9 @@
         />
         <rect width="20" height="4" x="2" y="7" class="fill-current text-blue-400" />
       </svg>
-      <div class="ml-4 py-2 font-semibold text-white">All Accounts</div>
+      <div class="ml-4 py-2 font-semibold text-white select-none">All Accounts</div>
     </router-link>
+
     <section class="border-t border-blue-900">
       <div
         @click="hideAccounts=!hideAccounts"
@@ -118,3 +119,17 @@
     </section>
   </div>
 </template>
+
+<script>
+// import HelloWorld from "./components/HelloWorld.vue";
+
+export default {
+  name: "WebNavbar",
+  components: {},
+  data() {
+    return {
+      hideAccounts: false
+    };
+  }
+};
+</script>

@@ -1,5 +1,5 @@
 <template>
-  <div id="WebReports" class>
+  <div id="Reports" class>
     <WebNavbar />
     <header class="bg-blue-100"></header>
     <main class></main>
@@ -12,7 +12,7 @@
 import WebNavbar from "@/components/WebNavbar.vue";
 
 export default {
-  name: "WebReports",
+  name: "Reports",
   components: {
     WebNavbar
   }
