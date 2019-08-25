@@ -1,5 +1,5 @@
 <template>
-  <div id="side-navbar" class="w-64 h-screen bg-blue-500">
+  <div id="side-navbar" class="w-80 h-screen bg-blue-500">
     <button class="w-full flex items-center justify-between hover:bg-blue-600">
       <div class="px-4 py-2 text-left">
         <div class="text-white font-semibold text-xl select-none">Our Budget</div>
@@ -23,9 +23,12 @@
       to="/"
       class="px-4 w-full bg-blue-500 inline-flex items-center hover:bg-blue-600"
       exact-active-class="bg-blue-800"
+      v-on:click.native="ActiveNav='Budget'"
     >
+      <!-- the v-on abouve doesn't work, but the bound class below does. need to figure out activenav data option update on router link activation -->
       <svg
         class="h-6 w-6 fill-current text-white"
+        :class="[ ActiveNav == 'Budget' ? 'text-green-400' : '']"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -35,7 +38,7 @@
         />
         <path class="secondary" d="M12 11.38l-10-5V6c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v.38l-10 5z" />
       </svg>
-      <div class="ml-4 py-2 font-semibold text-white select-none">Budget</div>
+      <div class="ml-4 py-2 font-0 text-white text-xl select-none">Budget</div>
     </router-link>
     <router-link
       to="/reports"
@@ -49,7 +52,7 @@
       >
         <path d="M1 10h3v10H1V10zM6 0h3v20H6V0zm5 8h3v12h-3V8zm5-4h3v16h-3V4z" />
       </svg>
-      <div class="ml-4 py-2 font-semibold text-white select-none">Reports</div>
+      <div class="ml-4 py-2 text-white text-xl select-none">Reports</div>
     </router-link>
 
     <router-link
@@ -68,7 +71,7 @@
         />
         <rect width="20" height="4" x="2" y="7" class="fill-current text-blue-400" />
       </svg>
-      <div class="ml-4 py-2 font-semibold text-white select-none">All Accounts</div>
+      <div class="ml-4 py-2 text-white text-xl select-none">All Accounts</div>
     </router-link>
 
     <section class="border-t border-blue-900">
@@ -128,7 +131,8 @@ export default {
   components: {},
   data() {
     return {
-      hideAccounts: false
+      hideAccounts: false,
+      ActiveNav: ""
     };
   }
 };
